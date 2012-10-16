@@ -1,0 +1,15 @@
+{% extends '::frontend.html.twig' %}
+{% block content %}
+
+    {% include 'UPRedesIntranetBundle:Default:heroNews.html.twig' with {'feeds': feeds} %}
+
+    {% for category in categories %}
+        {% if loop.index > 1 %}
+        <div class="row">
+            <div class="span12" id="{{ category.name }}">
+                {% render "UPRedesIntranetBundle:Category:show" with { 'id': category.id  } %}
+            </div>
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

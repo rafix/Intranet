@@ -1,0 +1,15 @@
+
+<section class="hero-unit">
+    <h1>Noticias</h1>
+    {% for feed in feeds %}
+    <article>
+        <header>
+            <a href="{{ feed.link }}" target="_blank">{{ feed.title | upper }}</a>
+            <time>{{ feed.pubDate | date('d/m/Y H:i') }}</time>
+        </header>
+        {#<p>{{ feed | raw }}</p>#}
+    </article>
+    {% else %}
+    <p>No hay noticias para mostrar :(</p>
+    {% endfor %}
+</section>

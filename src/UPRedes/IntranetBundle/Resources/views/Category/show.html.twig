@@ -1,0 +1,14 @@
+<ul class="thumbnails">
+{% for entity in entities %}
+
+    <li>
+        <a href="{{ entity.url }}" target="_blank">
+            <figure>
+                {% thumbnail entity.image, 'small' %}
+                <figcaption>{{ entity.name }}</figcaption>
+            </figure>
+        </a>
+    </li>
+
+{% endfor %}
+</ul>
