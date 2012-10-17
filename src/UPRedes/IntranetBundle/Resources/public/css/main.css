@@ -36,6 +36,14 @@ header .logo {
     text-align: center;
 }
 
+/*.thumbnails .span2 {*/
+    /*margin-left: 0;*/
+/*}*/
+
 .span12 {
     padding-top: 30px;
+}
+
+li a figure {
+    margin: 20px;
 }
