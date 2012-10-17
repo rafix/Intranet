@@ -56,3 +56,15 @@ header .logo {
 li a figure {
     margin: 20px;
 }
+
+li a figure figcaption {
+    margin-top: 15px;
+}
+
+.hero-unit h1 {
+    color: inherit;
+    font-size: 50px;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
