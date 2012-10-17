@@ -6,7 +6,7 @@
     {% for category in categories %}
         {% if loop.index > 1 %}
         <div class="row-fluid">
-            <div class="span12" id="{{ category.name }}">
+            <div class="span11 offset1" id="{{ category.name }}">
                 {% render "UPRedesIntranetBundle:Category:show" with { 'id': category.id  } %}
             </div>
         </div>

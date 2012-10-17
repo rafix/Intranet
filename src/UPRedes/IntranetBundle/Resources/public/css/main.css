@@ -43,7 +43,6 @@ header .logo {
     text-align: center;
     color: #7d7d7d;
     text-transform: uppercase;
-
 }
 
 .thumbnails a:hover {
@@ -65,6 +64,7 @@ li a figure {
 
 li a figure figcaption {
     margin-top: 15px;
+    font-weight: bold;
 }
 
 .hero-unit h1 {
@@ -78,3 +78,12 @@ li a figure figcaption {
 .hero-unit article {
     line-height: 20px;
 }
+
+/*.row-fluid {*/
+    /*border-bottom: 1px solid #BBB;*/
+    /*border-top: 2px solid #EEE;*/
+/*}*/
+
+/*.row-fluid:last-of-type { border-bottom: none; }*/
+/*.row-fluid:first-child { border-top: none; }*/
+
