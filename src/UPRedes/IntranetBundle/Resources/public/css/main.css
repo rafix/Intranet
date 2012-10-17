@@ -23,6 +23,8 @@
 
 .hero-unit p {
     color: #666;
+    font-size: 13px;
+    line-height: 18px;
 }
 
 .hero-unit a {

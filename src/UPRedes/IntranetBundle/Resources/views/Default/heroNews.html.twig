@@ -1,7 +1,8 @@
 
 <section class="hero-unit">
     <h1>NOTICIAS</h1>
-    {% for feed in feeds %}
+    {% for key, feed in feeds %}
+    {% if key < 5 %}
     <article>
         <header>
             <a href="{{ feed.link }}" target="_blank">{{ feed.title | capitalize }}</a>
@@ -9,6 +10,8 @@
         </header>
         <p>{{ feed | striptags | truncate(300, true) }}</p>
     </article>
+
+    {% endif %}
     {% else %}
     <p>No hay noticias para mostrar :(</p>
     {% endfor %}
