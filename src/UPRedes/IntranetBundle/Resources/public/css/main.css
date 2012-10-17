@@ -51,16 +51,20 @@ header .logo {
 }
 
 .thumbnails li, .thumbnails .span2 {
-    margin-left: 0;
+    margin-left: 0px;
+}
+
+.span12 .thumbnails {
+    margin-left: 80px;
 }
 
 .span12 {
     padding-top: 30px;
 }
 
-/*li a figure {*/
-    /*margin: 25px;*/
-/*}*/
+li a figure {
+    margin: 10px;
+}
 
 li a figure figcaption {
     margin-top: 15px;
