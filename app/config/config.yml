@@ -112,6 +112,11 @@ swiftmailer:
 #            translatable: true
 
 services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+
     upredes.intranet.admin.category:
         class: UPRedes\IntranetBundle\Admin\CategoryAdmin
         tags:

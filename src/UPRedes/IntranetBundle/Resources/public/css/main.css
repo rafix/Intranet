@@ -21,6 +21,10 @@
     color: #7d7d7d;
 }
 
+.hero-unit p {
+    color: #666;
+}
+
 .hero-unit a {
     font-weight: bold;
 }
@@ -62,9 +66,13 @@ li a figure figcaption {
 }
 
 .hero-unit h1 {
-    color: inherit;
-    font-size: 50px;
+    color: #7d7d7d;
+    font-size: 40px;
     letter-spacing: -1px;
     line-height: 1;
     margin-bottom: 10px;
+}
+
+.hero-unit article {
+    line-height: 20px;
 }
