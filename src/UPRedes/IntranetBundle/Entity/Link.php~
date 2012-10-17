@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * UPRedes\IntranetBundle\Entity\Link
  *
- * @ORM\Table()
+ * @ORM\Table(name="link")
  * @ORM\Entity(repositoryClass="UPRedes\IntranetBundle\Entity\LinkRepository")
  */
 class Link
