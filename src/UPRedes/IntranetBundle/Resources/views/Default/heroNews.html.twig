@@ -4,7 +4,7 @@
     {% for feed in feeds %}
     <article>
         <header>
-            <a href="{{ feed.link }}" target="_blank">{{ feed.title | upper }}</a>
+            <a href="{{ feed.link }}" target="_blank">{{ feed.title | capitalize }}</a>
             <time>{{ feed.pubDate | date('d/m/Y H:i') }}</time>
         </header>
         {#<p>{{ feed | raw }}</p>#}

@@ -8,6 +8,7 @@
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
     color: #ffffff;
     text-shadow: none; /*0 -1px 0 rgba(0, 0, 0, 0.25);*/
+    text-transform: uppercase;
 }
 
 
@@ -32,13 +33,21 @@ header .logo {
     padding-bottom: 20px;
 }
 
-.thumbnails a figcaption {
+.thumbnails a {
     text-align: center;
+    color: #7d7d7d;
+    text-transform: uppercase;
+
 }
 
-/*.thumbnails .span2 {*/
-    /*margin-left: 0;*/
-/*}*/
+.thumbnails a:hover {
+    color: #459c15;
+    text-decoration: none;
+}
+
+.thumbnails li, .thumbnails .span2 {
+    margin-left: 0;
+}
 
 .span12 {
     padding-top: 30px;
