@@ -58,9 +58,9 @@ header .logo {
     padding-top: 30px;
 }
 
-li a figure {
-    margin: 20px;
-}
+/*li a figure {*/
+    /*margin: 25px;*/
+/*}*/
 
 li a figure figcaption {
     margin-top: 15px;
