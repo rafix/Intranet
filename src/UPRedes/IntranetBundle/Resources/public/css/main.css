@@ -91,3 +91,7 @@ li a figure figcaption {
 /*.row-fluid:last-of-type { border-bottom: none; }*/
 /*.row-fluid:first-child { border-top: none; }*/
 
+.logo img {
+    margin-top: 10px;
+}
+
