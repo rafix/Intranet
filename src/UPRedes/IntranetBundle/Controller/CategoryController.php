@@ -45,6 +45,8 @@ class CategoryController extends Controller
 
         $entities = $em->getRepository('UPRedesIntranetBundle:Category')->find($id)->getLinks();
 
+//        $entities = $em->getRepository('UPRedesIntranetBundle:Link')->findByCategory($id);
+
         if (!$entities) {
             throw $this->createNotFoundException('Unable to find Category entity.');
         }

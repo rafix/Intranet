@@ -12,4 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class LinkRepository extends EntityRepository
 {
+    public function findByCategoryId($id)
+    {
+        $query = $this->getEntityManager()->createQuery('
+            SELECT l, c, m FROM UPRedesIntranetBundle:Link l
+                JOIN l.category c
+                JOIN l.image m
+                WHERE c.id = :id'
+        )->setParameter('id', $id);
+
+        return $query->getResult();
+    }
 }
