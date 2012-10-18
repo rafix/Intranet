@@ -22,13 +22,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </a>
-                <a class="brand" href="#Inicio">Intranet</a>
-                <div class="nav-collapse collapse">
 
+                <div class="nav-collapse collapse">
                     {% set ul_class, li_class = 'nav', '' %}
                     {% include 'UPRedesIntranetBundle:Category:index.html.twig' with { 'entities': categories  } %}
-
-
                 </div><!--/.nav-collapse -->
             </div>
         </div>

@@ -1,7 +1,7 @@
 {% extends '::frontend.html.twig' %}
 {% block content %}
 
-    {% include 'UPRedesIntranetBundle:Default:heroNews.html.twig' with {'feeds': feeds} %}
+    {% include 'UPRedesIntranetBundle:Default:heroNews.html.twig' with {'nupr': nupr, 'npinux': npinux} %}
 
     {% for category in categories %}
         {% if loop.index > 1 %}
@@ -10,6 +10,7 @@
                 {% render "UPRedesIntranetBundle:Category:show" with { 'id': category.id  } %}
             </div>
         </div>
+        <hr>
         {% endif %}
     {% endfor %}
 {% endblock %}

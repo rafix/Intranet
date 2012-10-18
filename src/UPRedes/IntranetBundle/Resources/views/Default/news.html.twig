@@ -1,0 +1,14 @@
+{% for key, feed in feeds %}
+    {% if key < 3 %}
+        <article>
+            <header>
+                <a href="{{ feed.link }}" target="_blank">{{ feed.title | capitalize }}</a>
+                {#<time>{{ feed.pubDate | date('d/m/Y H:i') }}</time>#}
+            </header>
+            <p>{{ feed | striptags | truncate(128, true) }}</p>
+        </article>
+
+    {% endif %}
+{% else %}
+    <p>No hay noticias para mostrar :(</p>
+{% endfor %}

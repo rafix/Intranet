@@ -130,8 +130,9 @@ services:
         arguments: [null, UPRedes\IntranetBundle\Entity\Link, UPRedesIntranetBundle:LinkAdmin]
 
 rss_client:
-   channels:
+    channels:
+        channel_upr:
+            - 'http://noticias.upr.edu.cu/index.php?format=feed&type=rss'
 
-      channel_upr:
-         - 'http://noticias.upr.edu.cu/index.php?format=feed&type=rss'
-
+        channel_pinux:
+                    - 'http://pinux.upr.edu.cu/?feed=rss2'
