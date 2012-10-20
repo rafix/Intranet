@@ -116,3 +116,11 @@ hr {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00999999', endColorstr='#00999999',GradientType=1 ); /* IE6-9 */
 }
 
+footer {
+    padding: 40px 0;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
