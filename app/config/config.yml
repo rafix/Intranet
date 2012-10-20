@@ -104,12 +104,12 @@ swiftmailer:
     password:  %mailer_password%
     spool:     { type: memory }
 
-#stof_doctrine_extensions:
-#    default_locale: es
-#    translation_fallback: true
-#    orm:
-#        default:
-#            translatable: true
+stof_doctrine_extensions:
+    default_locale: es
+    translation_fallback: true
+    orm:
+        default:
+            sluggable: true
 
 services:
     twig.extension.text:
@@ -135,4 +135,4 @@ rss_client:
             - 'http://noticias.upr.edu.cu/index.php?format=feed&type=rss'
 
         channel_pinux:
-                    - 'http://pinux.upr.edu.cu/?feed=rss2'
+            - 'http://pinux.upr.edu.cu/?feed=rss2'

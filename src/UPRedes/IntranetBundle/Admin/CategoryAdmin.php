@@ -22,6 +22,7 @@ class CategoryAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('name')
+            ->add('slug')
             ->add('_action', 'actions', array(
             'actions' => array(
                 'edit' => array(),
@@ -34,12 +35,14 @@ class CategoryAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('name');
+            ->add('name')
+            ->add('slug');
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name');
+            ->add('name')
+            ->add('slug');
     }
 }

@@ -3,6 +3,7 @@
 namespace UPRedes\IntranetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * UPRedes\IntranetBundle\Entity\Category
@@ -33,6 +34,11 @@ class Category
      */
     private $links;
 
+    /**
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(length=128, unique=false)
+     */
+    private $slug;
 
     /**
      * Get id
@@ -110,5 +116,28 @@ class Category
     public function getLinks()
     {
         return $this->links;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Category
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+    
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

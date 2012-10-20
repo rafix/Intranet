@@ -51,6 +51,7 @@ class AppKernel extends Kernel
 //            new Sonata\SeoBundle\SonataSeoBundle(),
 //            new Sonata\NotificationBundle\SonataNotificationBundle(),
             new Desarrolla2\Bundle\RSSClientBundle\RSSClientBundle(),
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
             new UPRedes\IntranetBundle\UPRedesIntranetBundle(),
         );

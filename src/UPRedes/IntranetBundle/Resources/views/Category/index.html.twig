@@ -5,7 +5,7 @@
 {% for entity in entities %}
     {% if entity.name != 'Destacados' %}
     <li class="{{ li_class }}">
-        <a href="#{{ entity.name }}">{{ entity.name }}</a>
+        <a href="#{{ entity.slug }}">{{ entity.name }}</a>
     </li>
     {% endif %}
 {% endfor %}
