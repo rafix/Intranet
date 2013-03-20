@@ -1,8 +1,8 @@
 {% extends '::frontend.html.twig' %}
 {% block content %}
 
-    {% include 'UPRedesIntranetBundle:Default:heroNews.html.twig' with {'nupr': nupr, 'npinux': npinux} %}
-
+    {% embed 'UPRedesIntranetBundle:Default:heroNews.html.twig' with {'nupr': nupr} %}
+    {% endembed %}
     {% for category in categories %}
         {% if loop.index > 1 %}
         <div class="row-fluid">

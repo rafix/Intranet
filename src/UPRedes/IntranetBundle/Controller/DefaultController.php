@@ -25,7 +25,7 @@ class DefaultController extends Controller
         return array(
             'categories' => $categories,
             'nupr'   => $this->client->fetch('channel_upr'),
-            'npinux'   => $this->client->fetch('channel_pinux'),
+//            'npinux'   => $this->client->fetch('channel_pinux'),
         );
     }
 }

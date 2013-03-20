@@ -1,14 +1,35 @@
-{% for key, feed in feeds %}
-    {% if key < 3 %}
-        <article>
-            <header>
-                <a href="{{ feed.link }}" target="_blank">{{ feed.title }}</a>
-                {#<time>{{ feed.pubDate | date('d/m/Y H:i') }}</time>#}
-            </header>
-            <p>{{ feed | striptags | truncate(128, true) }}</p>
-        </article>
+{% set feeds_total = feeds|length %}
+{% set feeds_left = feeds_total/2 %}
+<div class="span5">
+    {% for key, feed in feeds %}
+        {% if key < feeds_left %}
+            <article>
+                <header>
+                    <a href="{{ feed.link }}" target="_blank">{{ feed.title }}</a>
+                    {#<time>{{ feed.pubDate | date('d/m/Y H:i') }}</time>#}
+                </header>
+                <p>{{ feed | striptags | truncate(128, true) }}</p>
+            </article>
 
-    {% endif %}
-{% else %}
-    <p>No hay noticias para mostrar :(</p>
-{% endfor %}
+        {% endif %}
+    {% else %}
+        <p>No hay noticias para mostrar :(</p>
+    {% endfor %}
+</div>
+
+<div class="span5">
+    {% for key, feed in feeds %}
+        {% if key >= feeds_left %}
+            <article>
+                <header>
+                    <a href="{{ feed.link }}" target="_blank">{{ feed.title }}</a>
+                    {#<time>{{ feed.pubDate | date('d/m/Y H:i') }}</time>#}
+                </header>
+                <p>{{ feed | striptags | truncate(128, true) }}</p>
+            </article>
+
+        {% endif %}
+    {% else %}
+        <p>No hay noticias para mostrar :(</p>
+    {% endfor %}
+</div>
