@@ -5,12 +5,9 @@
     {% endembed %}
     {% for category in categories %}
         {% if loop.index > 1 %}
-        <div class="row-fluid">
-            <div class="span12" id="{{ category.slug }}">
-                {% render "UPRedesIntranetBundle:Category:show" with { 'id': category.id  } %}
+            <div class="row" id="{{ category.slug }}">
+                {% render(controller("UPRedesIntranetBundle:Category:show", { 'id': category.id  })) %}
             </div>
-        </div>
-        <hr>
         {% endif %}
     {% endfor %}
 {% endblock %}

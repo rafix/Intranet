@@ -41,6 +41,13 @@ class Category
     private $slug;
 
     /**
+     * @var string $homepage
+     *
+     * @ORM\Column(name="homepage", type="boolean")
+     */
+    private $homepage;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -139,5 +146,28 @@ class Category
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set homepage
+     *
+     * @param boolean $homepage
+     * @return Category
+     */
+    public function setHomepage($homepage)
+    {
+        $this->homepage = $homepage;
+    
+        return $this;
+    }
+
+    /**
+     * Get homepage
+     *
+     * @return boolean 
+     */
+    public function getHomepage()
+    {
+        return $this->homepage;
     }
 }

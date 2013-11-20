@@ -7,8 +7,9 @@
         }
     </style>
     <link rel="stylesheet" href="{{ asset('bundles/upredesintranet/css/bootstrap.css') }}" type="text/css" media="all" />
-    <link rel="stylesheet" href="{{ asset('bundles/upredesintranet/css/bootstrap-responsive.css') }}" type="text/css" media="all" />
+    {#<link rel="stylesheet" href="{{ asset('bundles/upredesintranet/css/bootstrap-responsive.css') }}" type="text/css" media="all" />#}
     <link rel="stylesheet" href="{{ asset('bundles/upredesintranet/css/main.css') }}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('bundles/upredesintranet/css/animations.css') }}" type="text/css" media="all" />
 {% endblock %}
 
 {% block body %}
@@ -34,14 +35,13 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="span2">
-                    <a href="http://intranet.upr.edu.cu" class="logo"><img src="{{ asset ('bundles/upredesintranet/images/logo.jpg') }}"></a>
-                </div>
-                <div class="span10">
-                    <div class="pull-right">
-                    {#{% set ul_class, li_class = '', 'span2' %}#}
-                    {% render "UPRedesIntranetBundle:Category:show" with { 'id': categories[0].id  } %}
+                <div class="span3">
+                    <div class="logo slideDown">
+                        <a href="http://intranet.upr.edu.cu" ><img src="{{ asset ('bundles/upredesintranet/images/ident.png') }}"></a>
                     </div>
+                </div>
+                <div id="divanimado" class="span8 offset1 slideDown">
+                    <h1 class="texthead">Intranet </br> Universitaria</h1>
                 </div>
             </div>
         </div>

@@ -57,6 +57,13 @@ class Link
      */
     private $description;
 
+    /**
+     * @var integer $weight
+     *
+     * @ORM\Column(name="weight", type="integer", length=3)
+     */
+    private $weight;
+
 
     /**
      * Get id
