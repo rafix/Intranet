@@ -15,7 +15,7 @@ sonata_media:
 #                - sonata.media.provider.file
 
             formats:
-                small: { width: 130, quality: 130}
+                small: { width: 400, quality: 100}
 
 #        news:
 #            providers:
