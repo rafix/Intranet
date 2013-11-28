@@ -16,7 +16,7 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categories = $em->getRepository('UPRedesIntranetBundle:Category')->findAll();
+        $categories = $em->getRepository('UPRedesIntranetBundle:Category')->findAllOrderedByWeight();
 
         $this->client = $this->get('rss_client');
 
@@ -25,7 +25,26 @@ class DefaultController extends Controller
         return array(
             'categories' => $categories,
             'nupr'   => $this->client->fetch('channel_upr'),
-//            'npinux'   => $this->client->fetch('channel_pinux'),
+        );
+    }
+
+    /**
+     * Finds and displays Links of a Category entity.
+     *
+     * @Template()
+     */
+    public function showAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('UPRedesIntranetBundle:Category')->find($id)->getLinks();
+
+        if (!$entities) {
+            throw $this->createNotFoundException('Unable to find Category entity.');
+        }
+
+        return array(
+            'entities'      => $entities,
         );
     }
 }

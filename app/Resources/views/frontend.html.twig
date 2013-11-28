@@ -26,7 +26,7 @@
 
                 <div class="nav-collapse collapse">
                     {% set ul_class, li_class = 'nav', '' %}
-                    {% include 'UPRedesIntranetBundle:Category:index.html.twig' with { 'entities': categories  } %}
+                        {% include 'UPRedesIntranetBundle:Default:menu.html.twig' with { 'entities': categories  } %}
                 </div><!--/.nav-collapse -->
             </div>
         </div>
@@ -41,34 +41,40 @@
                     </div>
                 </div>
                 <div id="divanimado" class="span8 offset1 slideDown">
-                    <h1 class="texthead">Intranet </br> Universitaria</h1>
+                    <h1 class="texthead">Intranet <br> Universitaria</h1>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="container">
-        {% block content %}{% endblock %}
+    <div class="content">
+        <div class="container">
+            {% block content %}{% endblock %}
+        </div>
     </div>
 
     <footer>
         <div class="container">
-            <div class="row-fluid">
-                <div class="span8">
-                    <p>
-                        Copyright &copy; {{ 'now' | date('Y') }} - Intranet UPR 3.0 <br />
-                        Todos los derechos reservados. <a href="http://di.upr.edu.cu" target="_blank">UPRedes</a>
-                    </p>
-                </div>
+            {% block footer %}{% endblock %}
+        </div>
+    </footer>
 
+    <div class="myfooter">
+        <div class="container">
+            <div class="row">
                 <div class="span4">
-
+                    <h3>Tiene Problemas?</h3>
+                    <p>Si necesita aclarar alguna duda, plantearnos un problema o hacer una sugerencia escríbanos un email a di@upr.edu.cu</p>
+                    <br>
+                    <p>
+                        Copyright &copy; {{ 'now' | date('Y') }} - Intranet UPR 4.0 <br />
+                        Todos los derechos reservados. <a href="http://elnodo.upr.edu.cu" target="_blank">UPRedes</a>
+                    </p>
                 </div>
             </div>
 
-
         </div>
-    </footer>
+    </div>
 {% endblock %}
 
 {% block javascripts %}

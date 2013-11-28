@@ -29,10 +29,12 @@ h1 {
     line-height: 40pt;
 }
 
-h2 {
-    font-size: 20pt;
-    font-family: Myriad Pro, Source Sans Pro;
+.news a {
     color: #666666;
+}
+
+.news h2 {
+    margin-bottom: 2%;
 }
 
 body {
@@ -122,7 +124,7 @@ h2 {
 h3 {
     /*font-family: uprlight;*/
     margin-top: 3%;
-    font-size: 20pt;
+    /*font-size: 20pt;*/
     font-weight: lighter;
    }
 p {
@@ -155,7 +157,7 @@ footer {
 
 header {
     background-color: #fff;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 
@@ -247,13 +249,22 @@ figure:hover figcaption {
     margin: 10%;
 }
 
+footer {
+    /*margin-top: 10%;*/
+    padding-left: 6%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #62b321;
+    color: #fff;
+}
+
 .myfooter {
     background-color: #ffffff;
     padding-bottom: 2%;
     padding-top: 2%;
 }
 
-.facultades{
+#facultades{
     margin-top: 2%;
     margin-bottom: 10%;
 }
@@ -272,7 +283,14 @@ ul.uprlinks { list-style-image: url("../images/ulimage.png");
     color: #8b8b8b;
 }
 
+ul li.linedli a {
+    color: #ffffff;
+}
 
+ul li.linedli a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
 /*.row {*/
     /*margin-left: 0px;*/
 /*}*/

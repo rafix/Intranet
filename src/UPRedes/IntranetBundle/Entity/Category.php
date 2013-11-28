@@ -48,6 +48,13 @@ class Category
     private $homepage;
 
     /**
+     * @var integer $weight
+     *
+     * @ORM\Column(name="weight", type="integer", length=3)
+     */
+    private $weight;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -169,5 +176,28 @@ class Category
     public function getHomepage()
     {
         return $this->homepage;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param integer $weight
+     * @return Category
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return integer
+     */
+    public function getWeight()
+    {
+        return $this->weight;
     }
 }

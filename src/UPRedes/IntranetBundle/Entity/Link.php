@@ -38,6 +38,14 @@ class Link
     private $url;
 
     /**
+     * @var string $url1
+     *
+     * @Assert\Url()
+     * @ORM\Column(name="url1", type="string", length=255)
+     */
+    private $url1;
+
+    /**
      *
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="links")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
@@ -119,6 +127,29 @@ class Link
     public function getUrl()
     {
         return $this->url;
+    }
+
+    /**
+     * Set url1
+     *
+     * @param string $url1
+     * @return Link
+     */
+    public function setUrl1($url1)
+    {
+        $this->url1 = $url1;
+
+        return $this;
+    }
+
+    /**
+     * Get url1
+     *
+     * @return string
+     */
+    public function getUrl1()
+    {
+        return $this->url1;
     }
 
     /**
