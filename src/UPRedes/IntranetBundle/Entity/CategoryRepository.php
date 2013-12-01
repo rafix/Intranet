@@ -18,6 +18,7 @@ class CategoryRepository extends EntityRepository
             ->createQuery(
                 'SELECT c FROM UPRedesIntranetBundle:Category c ORDER BY c.weight DESC'
             )
+            ->useResultCache(true)
             ->getResult();
     }
 }

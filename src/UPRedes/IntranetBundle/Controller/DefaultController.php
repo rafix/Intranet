@@ -20,8 +20,6 @@ class DefaultController extends Controller
 
         $this->client = $this->get('rss_client');
 
-
-
         return array(
             'categories' => $categories,
             'nupr'   => $this->client->fetch('channel_upr'),
@@ -37,10 +35,10 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('UPRedesIntranetBundle:Category')->find($id)->getLinks();
+        $entities = $em->getRepository('UPRedesIntranetBundle:Link')->findByCategoryId($id);
 
         if (!$entities) {
-            throw $this->createNotFoundException('Unable to find Category entity.');
+            throw $this->createNotFoundException('Unable to find Link collection.');
         }
 
         return array(

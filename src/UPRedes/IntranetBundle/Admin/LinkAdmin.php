@@ -41,11 +41,6 @@ class LinkAdmin extends Admin
             ->add('name')
             ->add('category')
             ->add('url')
-            ->add('url1', null, array(
-                'label' => 'Url',
-                'help' => 'Solo para los servicios que tienen dos direcciones',
-                'required' => false,
-            ))
             ->add('weight')
             ->add('image', 'sonata_type_model_list', array(
                 'required' => false,

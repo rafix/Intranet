@@ -1,30 +1,40 @@
-/*@font-face {*/
-    /*font-family: "upr";*/
-    /*src: url(/fonts/SourceSansPro-Regular.ttf);*/
-/*}*/
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('/fonts/MyriadPro-Regular.eot?') format('eot'),
+    url('/fonts/MyriadPro-Regular.otf')  format('opentype'),
+    url('/fonts/MyriadPro-Regular.woff') format('woff'),
+    url('/fonts/MyriadPro-Regular.ttf')  format('truetype'),
+    url('/fonts/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
+}
 
-/*@font-face {*/
-    /*font-family: "uprlight";*/
-    /*src: url(/fonts/SourceSansPro-Light.ttf);*/
-/*}*/
+@font-face {
+    font-family: 'MyriadPro-Light';
+    src: url('/fonts/MyriadPro-Light.eot?') format('eot'),
+    url('/fonts/MyriadPro-Light.otf')  format('opentype'),
+    url('/fonts/MyriadPro-Light.woff') format('woff'),
+    url('/fonts/MyriadPro-Light.ttf')  format('truetype'),
+    url('/fonts/MyriadPro-Light.svg#MyriadPro-Light') format('svg');
+}
 
-/*@font-face {*/
-    /*font-family: "upritalic";*/
-    /*src: url(/fonts/SourceSansPro-Italic.ttf);*/
-/*}*/
-
-/*#divanimado{*/
-    /*visibility: hidden;*/
-/*}*/
+@font-face {
+    font-family: 'MyriadPro-It';
+    src: url('/fonts/MyriadPro-It.eot?') format('eot'),
+    url('/fonts/MyriadPro-It.otf')  format('opentype'),
+    url('/fonts/MyriadPro-It.woff') format('woff'),
+    url('/fonts/MyriadPro-It.ttf')  format('truetype'),
+    url('/fonts/MyriadPro-It.svg#MyriadPro-It') format('svg');
+}
 
 .navbar .navbar-inner .container {
     border-bottom: solid 1px #a5a5a5;
 }
 
+h1, h2, h3 {
+    font-family: MyriadPro-Light, Calibri, sans-serif;
+}
 
 h1 {
     font-size: 36pt;
-    font-family: Myriad Pro, Source Sans Pro, Helvetica, sans-serif;
     color: #e9322d;
     line-height: 40pt;
 }
@@ -38,7 +48,7 @@ h1 {
 }
 
 body {
-    font-family: Myriad Pro, Source Sans Pro;
+    font-family: MyriadPro-Regular, Calibri, sans-serif;
     font-size: 12pt;
     background-color: #ffffff;
 }
@@ -82,15 +92,11 @@ header .container {
 
 
 h1 {
-    /*font-family: uprlight;*/
     vertical-align: middle;
     margin-top:6%;
     font-size: 48pt;
     font-style: normal;
-    /*font-weight: lighter;*/
-    font-weight: lighter;
     text-align: left;
-    /*color: #62b321;*/
 }
 
 .texthead {
@@ -118,14 +124,10 @@ h1 {
 
 h2 {
     font-size: 36pt;
-    font-weight: lighter;
 }
 
 h3 {
-    /*font-family: uprlight;*/
     margin-top: 3%;
-    /*font-size: 20pt;*/
-    font-weight: lighter;
    }
 p {
     margin-top: -2%;
@@ -333,6 +335,11 @@ ul li.linedli a:hover {
     .news {
         text-align: center;
         padding-top: 10%;
+    }
+
+    figure figcaption {
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
 

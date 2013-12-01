@@ -18,8 +18,11 @@ class LinkRepository extends EntityRepository
             SELECT l, c, m FROM UPRedesIntranetBundle:Link l
                 JOIN l.category c
                 JOIN l.image m
-                WHERE c.id = :id'
+                WHERE c.id = :id
+                ORDER BY l.weight DESC'
         )->setParameter('id', $id);
+
+        $query->useResultCache(true);
 
         return $query->getResult();
     }

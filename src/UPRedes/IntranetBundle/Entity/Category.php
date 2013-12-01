@@ -4,7 +4,6 @@ namespace UPRedes\IntranetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-
 /**
  * UPRedes\IntranetBundle\Entity\Category
  *
