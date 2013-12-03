@@ -137,6 +137,4 @@ rss_client:
     channels:
         channel_upr:
             - 'http://noticias.upr.edu.cu/index.php?format=feed&type=rss'
-
-        channel_pinux:
-            - 'http://pinux.upr.edu.cu/?feed=rss2'
+#            - 'http://feu.upr.edu.cu/?feed=rss2'

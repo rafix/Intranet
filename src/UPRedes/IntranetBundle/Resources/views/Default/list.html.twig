@@ -1,0 +1,7 @@
+<ul>
+    {% for entity in entities %}
+        <li class="linedli">
+            <a href="{{ entity.url }}" target="_blank">{{ entity.description }}</a>
+        </li>
+    {% endfor %}
+</ul>

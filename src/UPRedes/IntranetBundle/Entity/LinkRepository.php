@@ -15,9 +15,8 @@ class LinkRepository extends EntityRepository
     public function findByCategoryId($id)
     {
         $query = $this->getEntityManager()->createQuery('
-            SELECT l, c, m FROM UPRedesIntranetBundle:Link l
+            SELECT l, c FROM UPRedesIntranetBundle:Link l
                 JOIN l.category c
-                JOIN l.image m
                 WHERE c.id = :id
                 ORDER BY l.weight DESC'
         )->setParameter('id', $id);

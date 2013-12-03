@@ -22,16 +22,14 @@ class DefaultController extends Controller
 
         return array(
             'categories' => $categories,
-            'nupr'   => $this->client->fetch('channel_upr'),
+            'nupr'   => $this->client->fetch('channel_upr', 8),
         );
     }
 
     /**
      * Finds and displays Links of a Category entity.
-     *
-     * @Template()
      */
-    public function showAction($id)
+    public function showAction($id, $icons = true)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -41,8 +39,10 @@ class DefaultController extends Controller
             throw $this->createNotFoundException('Unable to find Link collection.');
         }
 
-        return array(
-            'entities'      => $entities,
-        );
+        if ($icons) {
+            return $this->render('UPRedesIntranetBundle:Default:show.html.twig', array('entities' => $entities));
+        }
+
+        return $this->render('UPRedesIntranetBundle:Default:list.html.twig', array('entities' => $entities));
     }
 }
