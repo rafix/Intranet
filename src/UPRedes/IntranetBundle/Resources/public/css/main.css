@@ -32,13 +32,13 @@
 h1, h2, h3 {
     font-family: MyriadPro-Light, Calibri, sans-serif;
     line-height: 30px;
-    font-weight: lighter;
 }
 
 h1 {
     font-size: 36pt;
     color: #e9322d;
     line-height: 40pt;
+    font-weight: lighter;
 }
 
 .news a {
