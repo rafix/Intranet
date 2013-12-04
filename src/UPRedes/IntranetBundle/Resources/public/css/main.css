@@ -299,7 +299,10 @@ ul li.linedli a:hover {
     /*margin-left: 0px;*/
 /*}*/
 
-
+.form-search {
+    margin-top: 8px;
+    margin-bottom: 0;
+}
  /*RESPONSIVE CHANGES____________________________________________________*/
 /* Large desktop */
 @media (min-width: 980px) {
