@@ -3,14 +3,21 @@
 
     {% embed 'UPRedesIntranetBundle:Default:heroNews.html.twig' with {'nupr': nupr} %}
     {% endembed %}
-    {% for category in categories %}
-        {% if loop.index > 1 %}
-        <div class="row-fluid">
-            <div class="span12" id="{{ category.slug }}">
-                {% render "UPRedesIntranetBundle:Category:show" with { 'id': category.id  } %}
+    {% for category in categories if category.homepage %}
+            <div class="row" id="{{ category.slug }}">
+                {% render(controller("UPRedesIntranetBundle:Default:show", { 'id': category.id, 'icons': category.homepage })) %}
             </div>
-        </div>
-        <hr>
-        {% endif %}
     {% endfor %}
+
+{% endblock %}
+
+{% block footer %}
+    <div class="row">
+        {% for category in categories if not category.homepage %}
+            <div class="span4 linklist">
+                <h3 id="{{category.slug }}">{{category.name}}</h3>
+                {% render(controller("UPRedesIntranetBundle:Default:show", { 'id': category.id, 'icons': category.homepage })) %}
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

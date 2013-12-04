@@ -57,6 +57,13 @@ class Link
      */
     private $description;
 
+    /**
+     * @var integer $weight
+     *
+     * @ORM\Column(name="weight", type="integer", length=3)
+     */
+    private $weight;
+
 
     /**
      * Get id
@@ -186,5 +193,28 @@ class Link
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param integer $weight
+     * @return Link
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+    
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return integer 
+     */
+    public function getWeight()
+    {
+        return $this->weight;
     }
 }

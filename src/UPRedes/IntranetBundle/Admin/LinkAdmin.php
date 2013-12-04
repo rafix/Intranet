@@ -21,13 +21,13 @@ class LinkAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-//            ->addIdentifier('image')
             ->addIdentifier('name')
             ->add('category')
             ->add('url')
+            ->add('weight')
             ->add('_action', 'actions', array(
             'actions' => array(
-                'view' => array(),
+                'show' => array(),
                 'edit' => array(),
                 'delete' => array(),
             )
@@ -41,8 +41,13 @@ class LinkAdmin extends Admin
             ->add('name')
             ->add('category')
             ->add('url')
-            ->add('image', 'sonata_type_model_list')
-            ->add('description', 'textarea', array('required' => false))
+            ->add('weight')
+            ->add('image', 'sonata_type_model_list', array(
+                'required' => false,
+            ))
+            ->add('description', 'textarea', array(
+                'required' => false,
+            ))
         ;
 
     }
@@ -50,6 +55,8 @@ class LinkAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('name');
+            ->add('name')
+            ->add('category')
+            ->add('weight');
     }
 }

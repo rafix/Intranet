@@ -4,7 +4,6 @@ namespace UPRedes\IntranetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-
 /**
  * UPRedes\IntranetBundle\Entity\Category
  *
@@ -39,6 +38,20 @@ class Category
      * @ORM\Column(length=128, unique=false)
      */
     private $slug;
+
+    /**
+     * @var string $homepage
+     *
+     * @ORM\Column(name="homepage", type="boolean")
+     */
+    private $homepage;
+
+    /**
+     * @var integer $weight
+     *
+     * @ORM\Column(name="weight", type="integer", length=3)
+     */
+    private $weight;
 
     /**
      * Get id
@@ -139,5 +152,51 @@ class Category
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * Set homepage
+     *
+     * @param boolean $homepage
+     * @return Category
+     */
+    public function setHomepage($homepage)
+    {
+        $this->homepage = $homepage;
+    
+        return $this;
+    }
+
+    /**
+     * Get homepage
+     *
+     * @return boolean 
+     */
+    public function getHomepage()
+    {
+        return $this->homepage;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param integer $weight
+     * @return Category
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return integer
+     */
+    public function getWeight()
+    {
+        return $this->weight;
     }
 }

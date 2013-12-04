@@ -12,5 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class CategoryRepository extends EntityRepository
 {
-
+    public function findAllOrderedByWeight()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT c FROM UPRedesIntranetBundle:Category c ORDER BY c.weight DESC'
+            )
+            ->useResultCache(true)
+            ->getResult();
+    }
 }

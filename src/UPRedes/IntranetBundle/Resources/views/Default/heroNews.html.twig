@@ -1,8 +1,4 @@
 
-<section class="hero-unit">
-    <img src="{{ asset ('bundles/upredesintranet/images/tabnews.png') }}" class="tabnews">
-    <div class="hero-content row-fluid">
-        <h1><a href="http://noticias.upr.edu.cu" target="_blank">TITULARES</a></h1>
+<section class="row news">
         {% include 'UPRedesIntranetBundle:Default:news.html.twig' with { 'feeds': nupr } %}
-    </div>
 </section>
