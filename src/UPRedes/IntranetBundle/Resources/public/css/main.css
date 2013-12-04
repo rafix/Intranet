@@ -32,6 +32,7 @@
 h1, h2, h3 {
     font-family: MyriadPro-Light, Calibri, sans-serif;
     line-height: 30px;
+    font-weight: lighter;
 }
 
 h1 {

@@ -5,12 +5,18 @@ namespace UPRedes\IntranetBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
 
+/**
+ * Class DefaultController
+ * @package UPRedes\IntranetBundle\Controller
+ */
 class DefaultController extends Controller
 {
     /**
      * @Route("/")
      * @Template()
+     * @Cache(expires="now +10 min", public="true")
      */
     public function indexAction()
     {
@@ -22,7 +28,7 @@ class DefaultController extends Controller
 
         return array(
             'categories' => $categories,
-            'nupr'   => $this->client->fetch('channel_upr', 8),
+            'nupr'   => $this->client->fetch('channel_upr', 6),
         );
     }
 
