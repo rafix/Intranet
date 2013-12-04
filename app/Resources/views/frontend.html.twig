@@ -29,8 +29,14 @@
 
                 <div class="nav-collapse collapse">
                     {% set ul_class, li_class = 'nav', '' %}
-                        {% include 'UPRedesIntranetBundle:Default:menu.html.twig' with { 'entities': categories  } %}
+                    {% include 'UPRedesIntranetBundle:Default:menu.html.twig' with { 'entities': categories  } %}
+                    <div class="pull-right">
+                        <form class="form-search" action="http://lupa.upr.edu.cu" method="get" target="_blank">
+                            <input type="text" name="q" class="form-control" placeholder="Buscar (Lupa)">
+                        </form>
+                    </div>
                 </div><!--/.nav-collapse -->
+
             </div>
         </div>
     </div>
