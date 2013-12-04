@@ -4,7 +4,7 @@
     <div class="new span2 {% if loop.first or (loop.index - 1) is divisible by(5) %}offset1{% endif %}">
         <a href="{{ entity.url }}" target="_blank">
             <figure class="iconint">
-                {% media entity.image, 'small' %}
+                {% media entity.image, 'reference' %}
                 <figcaption>{{ entity.name }}</figcaption>
             </figure>
         </a>
