@@ -323,8 +323,8 @@ header h1 {
 /* Large desktop */
 @media (min-width: 980px) {
 
-    .texthead {
-        margin-top: 12%;
+    #divanimado {
+        margin-top: 3%;
 
     }
 
@@ -332,8 +332,8 @@ header h1 {
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-    .texthead {
-        margin-top: 8%;
+    header #divanimado {
+        margin-top: 1%;
 
     }
 }
@@ -341,9 +341,8 @@ header h1 {
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
 
-    .texthead {
+    header h1, header h3 {
        text-align: center;
-
     }
     .iconint {
         margin: 22%;
