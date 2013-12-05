@@ -4,7 +4,7 @@
         <div class="item {% if loop.first %} active {% endif %}">
             <div class="span3">
                 <div class="logo {% if loop.first %}slideDown{% endif %}">
-                    <a href="{% if item.url %}{{ item.url }}{% else %}#{% endif %}">
+                    <a href="{% if item.url %}{{ item.url }}{% else %}#{% endif %}" target="_blank">
                         {% media item.image, 'reference' %}
                     </a>
                 </div>
