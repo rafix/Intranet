@@ -308,6 +308,17 @@ ul li.linedli a:hover {
     margin-top: 8px;
     margin-bottom: 0;
 }
+
+header .slogan {
+    margin-top: 0;
+    font-weight: lighter;
+
+}
+header h1 {
+    color: #62b321;
+    font-size: 48pt;
+}
+
  /*RESPONSIVE CHANGES____________________________________________________*/
 /* Large desktop */
 @media (min-width: 980px) {

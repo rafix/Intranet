@@ -64,6 +64,11 @@ class Link
      */
     private $weight;
 
+    /**
+     * @var boolean
+     * @ORM\Column(name="promoted", type="boolean")
+     */
+    private $promoted;
 
     /**
      * Get id
@@ -217,4 +222,22 @@ class Link
     {
         return $this->weight;
     }
+
+    /**
+     * @param boolean $promoted
+     */
+    public function setPromoted($promoted)
+    {
+        $this->promoted = $promoted;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getPromoted()
+    {
+        return $this->promoted;
+    }
+
+
 }

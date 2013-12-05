@@ -24,10 +24,16 @@ class DefaultController extends Controller
 
         $categories = $em->getRepository('UPRedesIntranetBundle:Category')->findAllOrderedByWeight();
 
+        $banners = $em->getRepository('UPRedesIntranetBundle:Header')->findBy(array('enabled' => true));
+
+        $promos = $em->getRepository('UPRedesIntranetBundle:Link')->findBy(array('promoted' => true));
+
         $this->client = $this->get('rss_client');
 
         return array(
             'categories' => $categories,
+            'banners' => $banners,
+            'promoted' => $promos,
             'nupr'   => $this->client->fetch('channel_upr', 6),
         );
     }

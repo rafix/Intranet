@@ -44,14 +44,16 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="span3">
-                    <div class="logo slideDown">
-                        <a href="http://intranet.upr.edu.cu" ><img src="{{ asset ('bundles/upredesintranet/images/ident.png') }}"></a>
-                    </div>
-                </div>
-                <div id="divanimado" class="span8 offset1 slideDown">
-                    <h1 class="texthead">Intranet <br> Universitaria</h1>
-                </div>
+                {#<div class="span3">#}
+                    {#<div class="logo slideDown">#}
+                        {#<a href="http://intranet.upr.edu.cu" ><img src="{{ asset ('bundles/upredesintranet/images/ident.png') }}"></a>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div id="divanimado" class="span8 offset1 slideDown">#}
+                    {#<h1 class="texthead">Intranet <br> Universitaria</h1>#}
+                {#</div>#}
+                {% set banners = banners|merge(promoted) %}
+                {% include 'UPRedesIntranetBundle:Default:header.html.twig' with { 'items': banners  } %}
             </div>
         </div>
     </header>
@@ -89,6 +91,7 @@
 {% block javascripts %}
     {% javascripts '@UPRedesIntranetBundle/Resources/public/js/jquery.js'
                    '@UPRedesIntranetBundle/Resources/public/js/bootstrap.js'
+                   '@UPRedesIntranetBundle/Resources/public/js/bootstrap-carousel.js'
                     filter='yui_js'
                     output='js/intranet.js' %}
         <script src="{{ asset_url }}" type="text/javascript"></script>
@@ -126,6 +129,9 @@
                         }
                     }
                 });
+                $('.carousel').carousel({
+                    interval: 8000
+                })
             });
             /*! Smooth Scroll - v1.4.5 - 2012-07-22
              * Copyright (c) 2012 Karl Swedberg; Licensed MIT, GPL */

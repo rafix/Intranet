@@ -16,19 +16,17 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Sonata\AdminBundle\Validator\ErrorElement;
 use Knp\Bundle\MenuBundle\MenuItem;
 
-class LinkAdmin extends Admin
+class HeaderAdmin extends Admin
 {
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('promoted')
+            ->add('enabled')
             ->addIdentifier('name')
-            ->add('category')
+            ->add('description', 'textarea')
             ->add('url')
-            ->add('weight')
             ->add('_action', 'actions', array(
             'actions' => array(
-                'show' => array(),
                 'edit' => array(),
                 'delete' => array(),
             )
@@ -39,20 +37,19 @@ class LinkAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('promoted', null, array(
+            ->add('enabled', null, array(
                 'required' => false,
             ))
             ->add('name')
-            ->add('category')
-            ->add('url')
-            ->add('weight')
-            ->add('image', 'sonata_type_model_list', array(
-                'required' => false,
-            ))
             ->add('description', 'textarea', array(
                 'required' => false,
             ))
-        ;
+            ->add('image', 'sonata_type_model_list', array(
+                'required' => false,
+            ))
+            ->add('url', 'url', array(
+                'required' => false,
+            ));
 
     }
 
@@ -60,9 +57,8 @@ class LinkAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
-            ->add('category')
-            ->add('weight')
-            ->add('promoted')
-        ;
+            ->add('description')
+            ->add('url')
+            ->add('enabled');
     }
 }

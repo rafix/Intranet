@@ -133,6 +133,12 @@ services:
             - { name: sonata.admin, manager_type: orm, group: Intranet, label: Link }
         arguments: [null, UPRedes\IntranetBundle\Entity\Link, UPRedesIntranetBundle:LinkAdmin]
 
+    upredes.intranet.admin.header:
+        class: UPRedes\IntranetBundle\Admin\HeaderAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Intranet, label: Header }
+        arguments: [null, UPRedes\IntranetBundle\Entity\Header, UPRedesIntranetBundle:HeaderAdmin]
+
 rss_client:
     channels:
         channel_upr:
