@@ -1,8 +1,8 @@
 {% extends '::frontend.html.twig' %}
 {% block content %}
 
-    {% embed 'UPRedesIntranetBundle:Default:heroNews.html.twig' with {'nupr': nupr} %}
-    {% endembed %}
+    {#{% embed 'UPRedesIntranetBundle:Default:heroNews.html.twig' with {'nupr': nupr} %}#}
+    {#{% endembed %}#}
     {% for category in categories if category.homepage %}
             <div class="row" id="{{ category.slug }}">
                 {% render(controller("UPRedesIntranetBundle:Default:show", { 'id': category.id, 'icons': category.homepage })) %}
