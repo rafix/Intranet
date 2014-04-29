@@ -34,7 +34,7 @@ class DefaultController extends Controller
             'categories' => $categories,
             'banners' => $banners,
             'promoted' => $promos,
-//            'nupr'   => $this->client->fetch('channel_upr', 6),
+            'nupr'   => $this->client->fetch('channel_upr', 6),
         );
     }
 
