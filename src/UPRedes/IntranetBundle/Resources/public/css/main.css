@@ -365,3 +365,7 @@ header h1 {
 
 /* Landscape phones and down */
 /*@media (max-width: 480px) { ... }*/
+
+.content article h3 a {
+    color: #62b321;
+}
