@@ -108,12 +108,12 @@ swiftmailer:
     password:  %mailer_password%
     spool:     { type: memory }
 
-stof_doctrine_extensions:
-    default_locale: es
-    translation_fallback: true
-    orm:
-        default:
-            sluggable: true
+# stof_doctrine_extensions:
+#     default_locale: es
+#     translation_fallback: true
+#     orm:
+#         default:
+#             sluggable: true
 
 services:
     twig.extension.text:

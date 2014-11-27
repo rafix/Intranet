@@ -30,12 +30,14 @@ class DefaultController extends Controller
 
         $this->client = $this->get('rss_client');
 
-        return array(
-            'categories' => $categories,
-            'banners' => $banners,
-            'promoted' => $promos,
-            'nupr'   => $this->client->fetch('channel_upr', 6),
-        );
+        return $this->render( 
+            'UPRedesIntranetBundle:Default:index.html.twig', 
+            array(
+                'categories' => $categories,
+                'banners' => $banners,
+                'promoted' => $promos,
+                'nupr'   => $this->client->fetch('channel_upr', 6),
+        ));
     }
 
     /**
