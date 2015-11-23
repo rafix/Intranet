@@ -1,15 +1,18 @@
 <?php
 
 namespace UPRedes\IntranetBundle\Entity;
-use Symfony\Component\Validator\Constraints as Assert;
 
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * UPRedes\IntranetBundle\Entity\Link
  *
  * @ORM\Table(name="link")
  * @ORM\Entity(repositoryClass="UPRedes\IntranetBundle\Entity\LinkRepository")
+ * @Vich\Uploadable
  */
 class Link
 {
@@ -69,6 +72,29 @@ class Link
      * @ORM\Column(name="promoted", type="boolean")
      */
     private $promoted;
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="link_image", fileNameProperty="imageName")
+     *
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @var string
+     */
+    private $imageName;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * Get id
@@ -157,7 +183,7 @@ class Link
     /**
      * Set category
      *
-     * @param UPRedes\IntranetBundle\Entity\Category $category
+     * @param UPRedesIntranetBundle:Category $category
      * @return Link
      */
     public function setCategory(\UPRedes\IntranetBundle\Entity\Category $category = null)
@@ -170,7 +196,7 @@ class Link
     /**
      * Get category
      *
-     * @return UPRedes\IntranetBundle\Entity\Category 
+     * @return UPRedesIntranetBundle:Category
      */
     public function getCategory()
     {
@@ -180,7 +206,7 @@ class Link
     /**
      * Set image
      *
-     * @param Application\Sonata\MediaBundle\Entity\Media $image
+     * @param ApplicationSonataMediaBundle:Media $image
      * @return Link
      */
     public function setImage(\Application\Sonata\MediaBundle\Entity\Media $image = null)
@@ -193,7 +219,7 @@ class Link
     /**
      * Get image
      *
-     * @return Application\Sonata\MediaBundle\Entity\Media 
+     * @return ApplicationSonataMediaBundle:Media
      */
     public function getImage()
     {
@@ -239,5 +265,48 @@ class Link
         return $this->promoted;
     }
 
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the  update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
+     */
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    /**
+     * @return File
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * @param string $imageName
+     */
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
 
 }

@@ -5,11 +5,9 @@ imports:
     - { resource: sonata/sonata_block.yml }
     - { resource: sonata/sonata_admin.yml }
     - { resource: sonata/sonata_media.yml }
+    - { resource: sonata/sonata_classification.yml }
 #    - { resource: sonata/sonata_formatter.yml }
-#    - { resource: sonata/sonata_seo.yml }
     - { resource: sonata/sonata_user.yml }
-#    - { resource: sonata/sonata_page.yml }
-#    - { resource: sonata/sonata_notification.yml }
     - { resource: fos_user.yml }
 #    - { resource: intranet.yml }
 
@@ -17,7 +15,6 @@ framework:
     #esi:             ~
     translator:      { fallback: %locale% }
     secret:          %secret%
-#    charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
     form:            true
     csrf_protection: true
@@ -29,6 +26,8 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form_themes:
+        - 'VichUploaderBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -74,31 +73,10 @@ doctrine:
                 #result_cache_driver: apc
                 mappings:
                     UPRedesIntranetBundle: ~
+                    SonataMediaBundle: ~
                     ApplicationSonataMediaBundle: ~
-#                    gedmo_translatable:
-#                        type: annotation
-#                        prefix: Gedmo\Translatable\Entity
-#                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translatable/Entity"
-#                        alias: GedmoTranslatable # this one is optional and will default to the name set for the mapping
-#                        is_bundle: false
-#                    gedmo_translator:
-#                        type: annotation
-#                        prefix: Gedmo\Translator\Entity
-#                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Translator/Entity"
-#                        alias: GedmoTranslator # this one is optional and will default to the name set for the mapping
-#                        is_bundle: false
-#                    gedmo_loggable:
-#                        type: annotation
-#                        prefix: Gedmo\Loggable\Entity
-#                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Loggable/Entity"
-#                        alias: GedmoLoggable # this one is optional and will default to the name set for the mapping
-#                        is_bundle: false
-#                    gedmo_tree:
-#                        type: annotation
-#                        prefix: Gedmo\Tree\Entity
-#                        dir: "%kernel.root_dir%/../vendor/gedmo/doctrine-extensions/lib/Gedmo/Tree/Entity"
-#                        alias: GedmoTree # this one is optional and will default to the name set for the mapping
-#                        is_bundle: false
+                    SonataClassificationBundle: ~
+                    ApplicationSonataClassificationBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -114,6 +92,44 @@ swiftmailer:
 #     orm:
 #         default:
 #             sluggable: true
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        header_image_desktop:
+            uri_prefix: /images/headers
+            upload_destination: %kernel.root_dir%/../web/images/headers
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+        header_image_mobile:
+            uri_prefix: /images/headers/mobile
+            upload_destination: %kernel.root_dir%/../web/images/headers/mobile
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+        link_image:
+            uri_prefix: /images/links/
+            upload_destination: %kernel.root_dir%/../web/images/links
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+
+jms_serializer:
+    handlers:
+#        datetime:
+#            default_format: "c" # ISO8601
+#            default_timezone: "UTC" # defaults to whatever timezone set in php.ini or via date_default_timezone_set
+
+    property_naming:
+        separator:  _
+        lower_case: true
+
+    metadata:
+        cache: file
+        debug: "%kernel.debug%"
+        file_cache:
+            dir: "%kernel.cache_dir%/serializer"
 
 services:
     twig.extension.text:
@@ -142,5 +158,12 @@ services:
 rss_client:
     channels:
         channel_upr:
-            - 'http://noticias.upr.edu.cu/index.php?format=feed&type=rss'
-#            - 'http://feu.upr.edu.cu/?feed=rss2'
+            - 'http://noticias.upr.edu.cu/?feed=rss2'
+            - 'http://elnodo.upr.edu.cu/?feed=rss2'
+
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations

@@ -49,6 +49,9 @@ class LinkAdmin extends Admin
             ->add('image', 'sonata_type_model_list', array(
                 'required' => false,
             ))
+            ->add('imageFile', 'vich_image', array(
+                'required' => false,
+            ))
             ->add('description', 'textarea', array(
                 'required' => false,
             ))

@@ -3,14 +3,16 @@
 namespace UPRedes\IntranetBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Sonata\AdminBundle\Form\DataTransformer\BooleanTypeToBooleanTransformer;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Header
  *
  * @ORM\Table(name="header")
  * @ORM\Entity(repositoryClass="UPRedes\IntranetBundle\Entity\HeaderRepository")
+ * @Vich\Uploadable
  */
 class Header
 {
@@ -61,6 +63,45 @@ class Header
      * @ORM\Column(name="enabled", type="boolean")
      */
     private $enabled;
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="header_image_desktop", fileNameProperty="desktopName")
+     *
+     * @var File
+     */
+    private $desktopFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @var string
+     */
+    private $desktopName;
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="header_image_mobile", fileNameProperty="mobileName")
+     *
+     * @var File
+     */
+    private $mobileFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @var string
+     */
+    private $mobileName;
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * Get id
@@ -165,5 +206,95 @@ class Header
     {
         return $this->enabled;
     }
+
+    /**
+     * @return File
+     */
+    public function getDesktopFile()
+    {
+        return $this->desktopFile;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $desktopFile
+     */
+    public function setDesktopFile(File $desktopFile = null)
+    {
+        $this->desktopFile = $desktopFile;
+
+        if($desktopFile) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getDesktopName()
+    {
+        return $this->desktopName;
+    }
+
+    /**
+     * @param string $desktopName
+     */
+    public function setDesktopName($desktopName)
+    {
+        $this->desktopName = $desktopName;
+    }
+
+    /**
+     * @return File
+     */
+    public function getMobileFile()
+    {
+        return $this->mobileFile;
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $mobileFile
+     */
+    public function setMobileFile(File $mobileFile = null)
+    {
+        $this->mobileFile = $mobileFile;
+
+        if($mobileFile) {
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    /**
+     * @return string
+     */
+    public function getMobileName()
+    {
+        return $this->mobileName;
+    }
+
+    /**
+     * @param string $mobileName
+     */
+    public function setMobileName($mobileName)
+    {
+        $this->mobileName = $mobileName;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTime $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+
 
 }

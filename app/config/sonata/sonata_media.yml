@@ -40,9 +40,9 @@ sonata_media:
         file:
             resizer:    false
 
-    pixlr:
-        enabled:  true
-        referrer: Demo - Sonata Project
+#    pixlr:
+#        enabled:  true
+#        referrer: Demo - Sonata Project
 
     resizer:
         simple:
@@ -69,11 +69,3 @@ sonata_media:
 #            filters:
 #                thumbnail: { size: [500, 70], mode: outbound }
 
-# Enable Doctrine to map the provided entities
-doctrine:
-    orm:
-        entity_managers:
-            default:
-                mappings:
-                    ApplicationSonataMediaBundle: ~
-                    SonataMediaBundle: ~

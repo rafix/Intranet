@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
 
             // KNP HELPER BUNDLES
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
@@ -34,23 +34,24 @@ class AppKernel extends Kernel
             new Sonata\MediaBundle\SonataMediaBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             // new Liip\ImagineBundle\LiipImagineBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
 
 
             // SONATA CORE & HELPER BUNDLES
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-            // new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
 //            new Sonata\FormatterBundle\SonataFormatterBundle(),
             new Sonata\CacheBundle\SonataCacheBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
-//            new Sonata\SeoBundle\SonataSeoBundle(),
-//            new Sonata\NotificationBundle\SonataNotificationBundle(),
             new Desarrolla2\Bundle\RSSClientBundle\RSSClientBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
             new UPRedes\IntranetBundle\UPRedesIntranetBundle(),
         );
 

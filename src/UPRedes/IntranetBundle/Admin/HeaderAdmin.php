@@ -47,6 +47,12 @@ class HeaderAdmin extends Admin
             ->add('image', 'sonata_type_model_list', array(
                 'required' => false,
             ))
+            ->add('desktopFile', 'vich_image', array(
+                'required' => false,
+            ))
+            ->add('mobileFile', 'vich_image', array(
+                'required' => false,
+            ))
             ->add('url', 'url', array(
                 'required' => false,
             ));
