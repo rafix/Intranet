@@ -1645,18 +1645,6 @@
                 "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
                 "shasum": "4ede0504bc4de9acd203a6d9124750ffd51a32e9"
             },
-            "archive": {
-                "exclude": [
-                    "/.*",
-                    "/tests",
-                    "/vendor",
-                    "/bin",
-                    "docs/_build",
-                    "Imagine-*.tgz",
-                    "imagine-*.phar",
-                    "composer.phar"
-                ]
-            },
             "require": {
                 "php": ">=5.3.2"
             },
@@ -2125,9 +2113,9 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "http://composer.upr.edu.cu/dist/jms-serializer-c8a171357ca92b6706e395c757f334902d430ea9-zip-a87d80.zip",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/c8a171357ca92b6706e395c757f334902d430ea9",
                 "reference": "c8a171357ca92b6706e395c757f334902d430ea9",
-                "shasum": "5289d198f36419c463abc6ce7a1a1145b963111a"
+                "shasum": ""
             },
             "require": {
                 "doctrine/annotations": "1.*",
@@ -2515,7 +2503,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -3809,27 +3797,27 @@
         },
         {
             "name": "sonata-project/core-bundle",
-            "version": "dev-master",
+            "version": "2.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "abc144d9fa06d6fccda83e81a3d1842cdc18b137"
+                "reference": "55f44c11efdd8c579d2aea414fbe1415a2a4001f"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://composer.upr.edu.cu/dist/sonata-project-core-bundle-abc144d9fa06d6fccda83e81a3d1842cdc18b137-zip-bbf48c.zip",
-                "reference": "abc144d9fa06d6fccda83e81a3d1842cdc18b137",
-                "shasum": "bab1fef4848c438c35a5ca4e488248fa59fc9f50"
+                "url": "http://composer.upr.edu.cu/dist/sonata-project-core-bundle-55f44c11efdd8c579d2aea414fbe1415a2a4001f-zip-b35653.zip",
+                "reference": "55f44c11efdd8c579d2aea414fbe1415a2a4001f",
+                "shasum": "687a77eb432d9a57a590aa1508463605d7634f1c"
             },
             "require": {
-                "cocur/slugify": "~1.4",
+                "cocur/slugify": "*",
                 "symfony/config": "~2.3",
                 "symfony/form": "~2.3",
                 "symfony/http-foundation": "~2.3",
                 "symfony/property-access": "~2.3",
                 "symfony/translation": "~2.3",
                 "symfony/validator": "~2.3",
-                "twig/twig": "~1.23"
+                "twig/twig": "~1.16"
             },
             "require-dev": {
                 "doctrine/orm": "~2.4",
@@ -3874,7 +3862,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2015-11-20 10:27:24"
+            "time": "2015-09-18 10:20:21"
         },
         {
             "name": "sonata-project/datagrid-bundle",
@@ -5629,7 +5617,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "friendsofsymfony/jsrouting-bundle": 20,
-        "sonata-project/core-bundle": 20,
         "sonata-project/doctrine-extensions": 20,
         "sonata-project/intl-bundle": 20,
         "sonata-project/admin-bundle": 20,
